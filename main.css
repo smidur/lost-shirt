@@ -418,7 +418,7 @@ table {
 .collections__item:last-child {
     margin-right: 0;
 }
-.collections__item:before {
+.collections__item::before {
     position: absolute;
     content: "";
     display: block;
@@ -428,10 +428,10 @@ table {
     left: -18%;
     background: center center / contain no-repeat;
 }
-.collections__item--type-men:before {
+.collections__item--type-men::before {
     background-image: url('./img/collections/collection_man.png');
 }
-.collections__item--type-women:before {
+.collections__item--type-women::before {
     background-image: url('./img/collections/collection_woman.png');
     top: -31%;
     left: -25%;
