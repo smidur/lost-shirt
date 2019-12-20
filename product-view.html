@@ -17,7 +17,7 @@
                 <a href="#" class="logo">
                     <img src="./img/content/logos/logo-main.png" alt="lost shirt logo" class="logo__pic">
                 </a>
-                <div class="decor__text">
+                <div class="lined-text product-view__lined-text">
                     <h1 class="lined-text lined-text--decor">
                         <span class="lined-text__word lined-text__word--decor">три</span>
                         <span class="lined-text__word lined-text__word--decor">футболки</span>
@@ -35,23 +35,9 @@
             <div class="container">
                 <ul class="order__list">
                     <li class="order__item">
-                        <ul class="order-image__list">
-                            <li class="order-image__item shirt-black">
-                                <img class="shirt-image" src="./img/tshirts/tshirt_07.png" alt="chosen black shirt image">
-                            </li>
-                            <li class="order-image__item shirt-white">
-                                <img class="shirt-image" src="./img/tshirts/tshirt_08.png" alt="chosen white shirt image">
-                            </li>
-                            <li class="order-image__item shirt-green">
-                                <img class="shirt-image" src="./img/tshirts/tshirt_09.png" alt="chosen green shirt image">
-                            </li>
-                            <li class="order-image__item shirt-blue">
-                                <img class="shirt-image" src="./img/tshirts/tshirt_10.png" alt="chosen blue shirt image">
-                            </li>
-                            <li class="order-image__item shirt-red">
-                                <img class="shirt-image" src="./img/tshirts/tshirt_11.png" alt="chosen red shirt image">
-                            </li>
-                        </ul>
+                        <div class="order-image">
+                            <img class="shirt-image" src="./img/tshirts/tshirt_07.png" alt="chosen black shirt image">
+                        </div>
                     </li>
                     <li class="order__item">
                         <div class="order__dept">
@@ -60,90 +46,114 @@
                             <div class="shirt-price">2800</div>
                         </div>
                         <div class="order__dept">
-                            <!-- даётся тег див для того, чтобы он определял пункты типа "Артикул: ", текст к-рого может прописываться в цсс; -->
-                            <!-- в тег спан будут браться данные с бд в соответствии родительского тега див. -->
-                            <div class="shirt-property fiber">
+                            <div class="shirt-property">
                                 <span class="shirt-property__desc">состав: </span>
                                 <span class="shirt-property__desc fiber__text">хлопок 100%</span>
                             </div>
-                            <div class="shirt-property season">
+                            <div class="shirt-property">
                                 <span class="shirt-property__desc">сезон: </span>
                                 <span class="shirt-property__desc season__text">мульти</span>
                             </div>
-                            <div class="shirt-property colour">
+                            <div class="shirt-property">
                                 <span class="shirt-property__desc">цвет: </span>
                                 <span class="shirt-property__desc colour__text">чёрный</span>
                             </div>
-                            <div class="shirt-property decoration">
+                            <div class="shirt-property">
                                 <span class="shirt-property__desc">узор: </span>
                                 <span class="shirt-property__desc decoration__text">рисунки и надписи</span>
                             </div>
-                            <div class="shirt-property country">
+                            <div class="shirt-property">
                                 <span class="shirt-property__desc">страна производства: </span>
                                 <span class="shirt-property__desc country__text">россия</span>
                             </div>
-                            <div class="shirt-property artikul">
+                            <div class="shirt-property">
                                 <span class="shirt-property__desc">артикул: </span>
                                 <span class="shirt-property__desc artikul__text">MA002EWDOEZ6</span>
                             </div>
                         </div>
-                        <div class="order__dept">
+                        <form class="order__dept" action="shirt-order.php" method="post">
                             <div class="size-choice">
-                                <ul class="size-choice__list">
-                                    <li class="size-choice__item size-choice__item--unclickable">
+                                <div class="size-choice__list">
+                                    <label class="size-choice__item">
+                                        <input type="radio" name="size-choice" value="size_xxs"
+                                         class="size-choice__radio" id="size-xxs" disabled />
                                         <span class="size-choice__text">2xs</span>
-                                    </li>
-                                    <li class="size-choice__item size-choice__item--unclickable">
+                                    </label>
+                                    <label class="size-choice__item">
+                                        <input type="radio" name="size-choice" value="size_xs"
+                                         class="size-choice__radio" id="size-xs" disabled />
                                         <span class="size-choice__text">xs</span>
-                                    </li>
-                                    <li class="size-choice__item size-choice__item--clickable">
+                                    </label>
+                                    <label class="size-choice__item">
+                                        <input type="radio" name="size-choice" value="size_s"
+                                         class="size-choice__radio" id="size-s" />
                                         <span class="size-choice__text">s</span>
-                                    </li>
-                                    <li class="size-choice__item size-choice__item--clickable size-choice__item--chosen">
+                                    </label>
+                                    <label class="size-choice__item size-choice__item--chosen">
+                                        <input type="radio" name="size-choice" value="size_m"
+                                         class="size-choice__radio" id="size-m" checked />
                                         <span class="size-choice__text">m</span>
-                                    </li>
-                                    <li class="size-choice__item size-choice__item--clickable">
+                                    </label>
+                                    <label class="size-choice__item">
+                                        <input type="radio" name="size-choice" value="size_l"
+                                         class="size-choice__radio" id="size-l" />
                                         <span class="size-choice__text">l</span>
-                                    </li>
-                                    <li class="size-choice__item size-choice__item--clickable">
+                                    </label>
+                                    <label class="size-choice__item">
+                                        <input type="radio" name="size-choice" value="size_xl"
+                                         class="size-choice__radio" id="size-xl" />
                                         <span class="size-choice__text">xl</span>
-                                    </li>
-                                    <li class="size-choice__item size-choice__item--clickable">
+                                    </label>
+                                    <label class="size-choice__item">
+                                        <input type="radio" name="size-choice" value="size_xxl"
+                                         class="size-choice__radio" id="size-xxl" />
                                         <span class="size-choice__text">2xl</span>
-                                    </li>
-                                    <li class="size-choice__item size-choice__item--unclickable">
+                                    </label>
+                                    <label class="size-choice__item">
+                                        <input type="radio" name="size-choice" value="size_xxxl"
+                                         class="size-choice__radio" id="size-xxxl" disabled />
                                         <span class="size-choice__text">3xl</span>
-                                    </li>
-                                </ul>
+                                    </label>
+                                </div>
                             </div>
                             <div class="color-choice">
-                                <ul class="color-choice__list">
-                                    <li class="color-choice__item color-choice__item--chosen">
-                                        <div class="color-choice__elem color-choice__elem--color-black" data-filter="shirt-black"></div>
-                                    </li>
-                                    <li class="color-choice__item">
-                                        <div class="color-choice__elem color-choice__elem--color-white" data-filter="shirt-white"></div>
-                                    </li>
-                                    <li class="color-choice__item">
-                                        <div class="color-choice__elem color-choice__elem--color-green" data-filter="shirt-green"></div>
-                                    </li>
-                                    <li class="color-choice__item">
-                                        <div class="color-choice__elem color-choice__elem--color-blue" data-filter="shirt-blue"></div>
-                                    </li>
-                                    <li class="color-choice__item">
-                                        <div class="color-choice__elem color-choice__elem--color-red" data-filter="shirt-red"></div>
-                                    </li>
-                                </ul>
+                                <div class="color-choice__list">
+                                    <div class="color-choice__item">
+                                        <input type="radio" name="color-choice"
+                                         class="color-choice__radio" id="shirt-black" checked />
+                                        <label for="shirt-black" class="color-choice__label color-choice__label--color-black"></label>
+                                    </div>
+                                    <div class="color-choice__item">
+                                        <input type="radio" name="color-choice"
+                                         class="color-choice__radio" id="shirt-white" />
+                                        <label for="shirt-white" class="color-choice__label color-choice__label--color-white"></label>
+                                    </div>
+                                    <div class="color-choice__item">
+                                        <input type="radio" name="color-choice"
+                                         class="color-choice__radio" id="shirt-green" />
+                                        <label for="shirt-green" class="color-choice__label color-choice__label--color-green"></label>
+                                    </div>
+                                    <div class="color-choice__item">
+                                        <input type="radio" name="color-choice"
+                                         class="color-choice__radio" id="shirt-blue" />
+                                        <label for="shirt-blue" class="color-choice__label color-choice__label--color-blue"></label>
+                                    </div>
+                                    <div class="color-choice__item">
+                                        <input type="radio" name="color-choice"
+                                         class="color-choice__radio" id="shirt-red" />
+                                        <label for="shirt-red" class="color-choice__label color-choice__label--color-red"></label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="btn order-btn">купить</div>
-                        </div>
+                            <button type="submit" class="btn order-btn">купить</button>
+                        </form>
                     </li>
                 </ul>
             </div>
         </section>
         <section class="information">
             <div class="container">
-                <ul class="filter__list">
+                <ul class="filter">
                     <li class="filter__item filter__item--active">
                         <a href="#" data-filter="shirt-desc" class="filter__link">описание</a>
                     </li>
@@ -497,7 +507,6 @@
     </div>
     <!-- <script src="./scripts/isotope.pkgd.min.js"></script> -->
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script src="./scripts/sizepick.js"></script>
     <script src="./scripts/colorpick.js"></script>
     <script src="./scripts/infopick.js"></script>
 </body>

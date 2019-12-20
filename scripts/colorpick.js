@@ -1,29 +1,43 @@
-(function () {
+(function() {
 
-    const elem = document.querySelector('.order-image__list');
-    const iso = new Isotope( elem, {
-        itemSelector: '.order-image__item',
-        filter: '.shirt-black',
-    });
+    const colorList = document.querySelector('.color-choice__list');
+    const image = document.querySelector('.shirt-image');
 
-    const controls = document.querySelectorAll('.color-choice__elem');
-    const chosenClass = "color-choice__item--chosen";
+    function changeImg (event) {
 
-    controls.forEach(function(control) {
-        control.addEventListener('click', function() {
+        if (!event.target.matches('.color-choice__radio')) {
+            return;
+        };
 
-            const filterName = control.getAttribute("data-filter");
-        
-            controls.forEach(function(link) {
-                link.closest('.color-choice__item').classList.remove(chosenClass);
-            });
-            control.closest('.color-choice__item').classList.add(chosenClass);
+        const id = event.target.id;
+        const shirts = [
+            "shirt-black", 
+            "shirt-white", 
+            "shirt-green", 
+            "shirt-blue", 
+            "shirt-red"];
 
-            iso.arrange({
-                filter: `.${filterName}`
-            });
+        if (id == shirts[0]) {
+            image.setAttribute('src', './img/tshirts/tshirt_07.png');
+            image.setAttribute('alt', 'chosen black shirt image');
+        }
+        else if (id == shirts[1]) {
+            image.setAttribute('src', './img/tshirts/tshirt_08.png');
+            image.setAttribute('alt', 'chosen white shirt image');
+        }
+        else if (id == shirts[2]) {
+            image.setAttribute('src', './img/tshirts/tshirt_09.png');
+            image.setAttribute('alt', 'chosen green shirt image');
+        }
+        else if (id == shirts[3]) {
+            image.setAttribute('src', './img/tshirts/tshirt_10.png');
+            image.setAttribute('alt', 'chosen blue shirt image');
+        }
+        else if (id == shirts[4]) {
+            image.setAttribute('src', './img/tshirts/tshirt_11.png');
+            image.setAttribute('alt', 'chosen red shirt image');
+        };
+    };
 
-        });
-    });
-    
+    colorList.addEventListener('click', changeImg);
 }())
